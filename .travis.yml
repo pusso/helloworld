@@ -17,6 +17,11 @@ script:
   - cmake --build . --target test_main_cli
   - cmake --build . --target package
 
+after_script:
+  - ls -la
+  - sudo dpkg -i helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb
+  - ./helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb
+
 deploy:
   provider:  script
   skip_cleanup: true
