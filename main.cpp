@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(int argc, char const *argv[]) {
-	std::cout << "Hello, World!" << std::endl;
-	std::cout << "Version " << version() << std::endl;
+	cout << "build " << version() << endl;
+	cout << "Hello, World!" << version() << endl;
 	return 0;
 }
