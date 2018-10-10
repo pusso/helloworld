@@ -20,7 +20,7 @@ script:
 after_script:
   - ls -la
   - sudo dpkg -i helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb
-  - ./helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb
+  - ./helloworld
 
 deploy:
   provider:  script
