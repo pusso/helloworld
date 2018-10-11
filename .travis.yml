@@ -17,6 +17,10 @@ script:
   - cmake --build . --target test_main_cli
   - cmake --build . --target package
 
+after_script:
+  - ls -la
+  - ./helloworld
+
 deploy:
   provider:  script
   skip_cleanup: true
