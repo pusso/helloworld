@@ -7,11 +7,11 @@ find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 configure_file( version.h.in ${PROJECT_SOURCE_DIR}/version.h )
 
 add_library( helloworld_lib lib.cpp )
-add_executable( helloworld_cli main.cpp )
+add_executable( helloworld main.cpp )
 add_executable( test_main_cli test_main.cpp )
 
 set_target_properties(
-    helloworld_cli
+    helloworld
     helloworld_lib
     test_main_cli
   PROPERTIES
@@ -27,14 +27,14 @@ set_target_properties(
     INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
 )
 
-target_link_libraries( helloworld_cli helloworld_lib)
+target_link_libraries( helloworld helloworld_lib)
 
 target_link_libraries(test_main_cli
   ${Boost_LIBRARIES}
   helloworld_lib
 )
 
-install(TARGETS helloworld_cli RUNTIME DESTINATION bin)
+install(TARGETS helloworld RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 
